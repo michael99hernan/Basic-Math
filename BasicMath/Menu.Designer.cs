@@ -34,6 +34,10 @@
             this.ADD = new System.Windows.Forms.Button();
             this.SUB = new System.Windows.Forms.Button();
             this.MULT = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.speedLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -48,13 +52,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Title.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(12, 9);
+            this.Title.Location = new System.Drawing.Point(3, 9);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(660, 28);
             this.Title.TabIndex = 0;
             this.Title.Text = "Practice Math";
             this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Title.Click += new System.EventHandler(this.Title_Click);
             // 
             // ADD
             // 
@@ -95,11 +98,38 @@
             this.MULT.UseVisualStyleBackColor = false;
             this.MULT.Click += new System.EventHandler(this.MULT_Click);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.LargeChange = 2000;
+            this.trackBar1.Location = new System.Drawing.Point(247, 215);
+            this.trackBar1.Maximum = 10000;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(197, 45);
+            this.trackBar1.SmallChange = 1000;
+            this.trackBar1.TabIndex = 4;
+            this.trackBar1.Tag = "";
+            this.trackBar1.TickFrequency = 1000;
+            this.trackBar1.Value = 4000;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
+            // 
+            // speedLabel
+            // 
+            this.speedLabel.AutoSize = true;
+            this.speedLabel.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speedLabel.Location = new System.Drawing.Point(180, 215);
+            this.speedLabel.Name = "speedLabel";
+            this.speedLabel.Size = new System.Drawing.Size(61, 24);
+            this.speedLabel.TabIndex = 5;
+            this.speedLabel.Text = "Speed";
+            this.speedLabel.Click += new System.EventHandler(this.speedLabel_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 311);
+            this.Controls.Add(this.speedLabel);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.MULT);
             this.Controls.Add(this.SUB);
             this.Controls.Add(this.ADD);
@@ -109,7 +139,9 @@
             this.MinimumSize = new System.Drawing.Size(700, 350);
             this.Name = "Menu";
             this.Text = "Practice Math";
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,6 +152,9 @@
         private System.Windows.Forms.Button ADD;
         private System.Windows.Forms.Button SUB;
         private System.Windows.Forms.Button MULT;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label speedLabel;
     }
 }
 

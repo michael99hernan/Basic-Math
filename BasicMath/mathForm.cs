@@ -10,17 +10,18 @@ using System.Windows.Forms;
 using System.Threading;
 namespace BasicMath
 {
-//Add sliders
+
     public partial class mathForm : Form
     {
         public int MAX = 100;
         public string symbol;
-        public mathForm(string c)
+        private int speed;
+        public mathForm(string c, int speed)
         {
             InitializeComponent();
             symbol = c;
             start.Show();
-            
+            this.speed = speed;
         }
 
         public void calculate()
@@ -64,7 +65,7 @@ namespace BasicMath
                 fNum.Text = first.ToString();
                 sNum.Text = second.ToString();
                 this.Update();
-                Thread.Sleep(4000);
+                Thread.Sleep(speed);
                 res.Text = result.ToString();
                 this.Update();
                 Thread.Sleep(1000);
