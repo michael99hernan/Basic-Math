@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 namespace BasicMath
 {
+//Add sliders
     public partial class mathForm : Form
     {
         public int MAX = 100;
